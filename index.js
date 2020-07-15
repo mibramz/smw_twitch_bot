@@ -168,7 +168,7 @@ client.on('chat', (channel, user, message, self) => {
     }
   }
 
-  if(user.mod || user.username === 'supermarioworld' && message.toLowerCase().startsWith('!updatecomms')){
+  if((user.mod && message.toLowerCase().startsWith('!updatecomms')) || (user.username === 'supermarioworld' && message.toLowerCase().startsWith('!updatecomms'))){
     let msg = message.split(' ');
     if(msg.length > 1){
       currentComms.length = 0;
@@ -181,7 +181,7 @@ client.on('chat', (channel, user, message, self) => {
     return;
   }
 
-  if(user.mod || user.username === 'supermarioworld'  && message.toLowerCase().startsWith('!updaterestream')){
+  if((user.mod && message.toLowerCase().startsWith('!updaterestream')) || (user.username === 'supermarioworld' && message.toLowerCase().startsWith('!updaterestream'))){
     let msg = message.split(' ');
     if(msg.length > 1){
       currentRestreamer.length = 0;
@@ -194,7 +194,7 @@ client.on('chat', (channel, user, message, self) => {
     return;
   }
 
-  if(user.mod || user.username === 'supermarioworld'  && message.toLowerCase().startsWith('!updaterunners')){
+  if((user.mod && message.toLowerCase().startsWith('!updaterunners')) || (user.username === 'supermarioworld' && message.toLowerCase().startsWith('!updaterunners'))){
     let msg = message.split(' ');
     if(msg.length > 1){
       currentRunners.length = 0;
